@@ -2,7 +2,7 @@
 An implementation of Zikoko mobile App design by [@UduakEkpo12 - twitter](https://twitter.com/UduakEkpo12) using React Native.
 
 ### Screenshot
-<img alt="app screenshot" src="https://raw.githubusercontent.com/03balogun/zikoko-app/main/assets/images/zikoko-app-screenshot.png" width="400" height="400" />
+<img alt="app screenshot" src="https://raw.githubusercontent.com/03balogun/zikoko-app/master/assets/images/zikoko-app-screenshot.png" width="400" height="400" />
 
 ### Getting Started
 These instructions will get you a copy of the project up and running on your computer.
