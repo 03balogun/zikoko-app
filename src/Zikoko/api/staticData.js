@@ -245,3 +245,13 @@ export const profilePendingReads = [
     },
   ],
 ];
+
+export const searchHistory = [
+  'HER',
+  'QUIZZES',
+  'LOVE LIFE',
+  'ABROAD LIFE',
+  'POP',
+  'QUICKIE',
+  'HACKED'
+]
