@@ -1,24 +1,25 @@
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import FavouriteIcon from '../assets/icons/favourite.svg';
+import MoreIcon from '../assets/icons/more.svg';
 import {COLORS, PRIMARY_FONT} from '../assets/config';
 
-const TabCard = ({article}) => (
+const TabCard = ({article, isBookmarked}) => (
   <View style={styles.container}>
     <Image
-      style={styles.cardImage}
+      style={[styles.cardImage, {borderRadius: isBookmarked ? 8 : 0}]}
       source={article.cover}
       resizeMode={'contain'}
     />
     <View style={styles.cardContentWrapper}>
-      <Text style={styles.category}>LOVE LIFE</Text>
+      <Text style={styles.category}>{article.category}</Text>
       <TouchableOpacity activeOpacity={0.8}>
         <Text style={styles.cardTitle}>{article.title}</Text>
       </TouchableOpacity>
       <Text style={styles.author}>By {article.author}</Text>
     </View>
     <TouchableOpacity style={styles.favouriteButton}>
-      <FavouriteIcon />
+      {isBookmarked ? <MoreIcon /> : <FavouriteIcon />}
     </TouchableOpacity>
   </View>
 );
@@ -46,11 +47,13 @@ const styles = StyleSheet.create({
     fontFamily: PRIMARY_FONT.semiBold,
     fontSize: 15,
     lineHeight: 18,
+    textTransform: 'capitalize',
   },
   category: {
     color: COLORS.primary,
     fontFamily: PRIMARY_FONT.semiBold,
     fontSize: 11,
+    textTransform: 'uppercase',
   },
   author: {color: '#818998', marginTop: 14},
   favouriteButton: {position: 'absolute', right: 20, top: 20},

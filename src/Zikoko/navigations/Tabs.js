@@ -5,7 +5,7 @@ import {COLORS, PRIMARY_FONT} from '../assets/config';
 const width = Dimensions.get('window').width;
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
-const Tabs = ({scenes, tabRoutes}) => {
+const Tabs = ({scenes, tabRoutes, tabBarStyle, indicatorStyle, labelStyle}) => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState(tabRoutes);
 
@@ -14,12 +14,12 @@ const Tabs = ({scenes, tabRoutes}) => {
   const renderTabBar = (props) => (
     <TabBar
       {...props}
-      indicatorStyle={styles.indicatorStyle}
-      style={styles.tarBar}
+      indicatorStyle={indicatorStyle || styles.indicatorStyle}
+      style={tabBarStyle || styles.tabBar}
       renderLabel={({route, focused, color}) => (
         <Text
           style={[
-            styles.renderLabel,
+            labelStyle || styles.renderLabel,
             {color: focused ? COLORS.primaryText : '#aeb5c0'},
           ]}>
           {route.title}
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     fontFamily: PRIMARY_FONT.medium,
     margin: 8,
   },
-  tarBar: {
+  tabBar: {
     backgroundColor: 'transparent',
     marginBottom: 15,
   },
