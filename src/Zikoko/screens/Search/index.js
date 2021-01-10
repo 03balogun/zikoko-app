@@ -19,7 +19,7 @@ const Search = () => (
     </View>
     <View style={styles.historyItems}>
       {searchHistory.map((item, index) => (
-        <TouchableOpacity style={styles.historyItem}>
+        <TouchableOpacity style={styles.historyItem} key={index}>
           <Text style={styles.historyItemText}>{item}</Text>
         </TouchableOpacity>
       ))}
