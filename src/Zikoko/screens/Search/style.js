@@ -5,7 +5,6 @@ import {COLORS, PRIMARY_FONT} from '../../assets/config';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.secondary,
     padding: 24,
     paddingTop: 40,
   },
